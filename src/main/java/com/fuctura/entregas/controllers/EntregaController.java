@@ -12,13 +12,14 @@ import org.springframework.web.bind.annotation.RestController;
 import com.fuctura.entregas.models.Cliente;
 import com.fuctura.entregas.models.Entrega;
 import com.fuctura.entregas.repository.EntregasRepository;
+import com.fuctura.entregas.service.EntregasService;
 
 @RestController
 @RequestMapping("/")
 public class EntregaController  {
 	
 	@Autowired
-	private EntregasRepository repository;
+	private EntregasService service;
 	
 	//@PostMapping("/post")
 	//public Cliente postCliente(@RequestBody Cliente cliente) {
@@ -27,8 +28,6 @@ public class EntregaController  {
 	
 	@PostMapping("/post")
 	public Entrega postEntrega(@RequestBody Entrega entrega) {
-		entrega.setDataPedido(LocalDateTime.now());
-		entrega.setDataFinalizacao(LocalDateTime.now());
-		return repository.save(entrega);
+		return service.postEntrega(entrega);
 	}
 }
