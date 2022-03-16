@@ -36,7 +36,7 @@ public class Entrega {
 	@Enumerated(EnumType.STRING) 
 	private StatusEntrega status;
 	
-	@Embedded //Anotação que faz com que a entidadade receba atributos de outra classe
+	@Embedded //Anotação faz com que a entidadade receba atributos de outra classe
 	private Destinatario destinatario;
 
 }
