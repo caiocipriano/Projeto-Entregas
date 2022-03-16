@@ -16,7 +16,7 @@ public class EntregasService {
 	@Autowired
 	EntregasRepository repository;
 	
-	
+	//Função a ser chamada no Controller como POST
 	public Entrega postEntrega(@RequestBody Entrega entrega) {
 		entrega.setDataPedido(LocalDateTime.now());
 		entrega.setDataFinalizacao(LocalDateTime.now());

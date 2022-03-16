@@ -26,6 +26,7 @@ public class EntregaController  {
 	//	return repository.save(cliente);
 //	}
 	
+	//Chamando função do Service
 	@PostMapping("/post")
 	public Entrega postEntrega(@RequestBody Entrega entrega) {
 		return service.postEntrega(entrega);
