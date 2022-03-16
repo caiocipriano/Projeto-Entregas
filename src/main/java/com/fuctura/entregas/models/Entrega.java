@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -22,17 +23,20 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-@Embeddable
+@Entity
 public class Entrega {
 	
-	
+	@Id
+	@GeneratedValue( strategy=GenerationType.AUTO )
+	private Long id;
 	private BigDecimal taxa;
 	private LocalDateTime dataPedido;
 	private LocalDateTime dataFinalizacao;
 	
-	@Enumerated(EnumType.STRING)
+	@Enumerated(EnumType.STRING) 
 	private StatusEntrega status;
 	
-
+	@Embedded //Anotação que faz com que a entidadade receba atributos de outra classe
+	private Destinatario destinatario;
 
 }

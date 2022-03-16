@@ -14,29 +14,27 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-@Entity
+@Embeddable
 public class Destinatario {
-	@Id
-	@GeneratedValue( strategy=GenerationType.AUTO )
-	private Long id;
+	
+	
 	@Column(name="nome_destinatario")
 	@NotNull(message="O nome não pode ser nulo")
 	private String nome;
 	
-	@Column(name="nome_logradouro")
+	@Column(name="logradouro_destinatario")
 	@NotNull(message="O logradouro não pode ser nulo")
 	private String logradouro;
 	
-	@Column(name="nome_numero")
+	@Column(name="numero_destinatario")
 	@NotNull(message="O numero não pode ser nulo")
 	private String numero;
 	
-	@Column(name="nome_complemento")
+	@Column(name="complemento_destinatario")
 	private String complemento;
 	
-	@Column(name="nome_bairro")
+	@Column(name="bairro_destinatario")
 	private String bairro;
 	
-	@Embedded
-	private Entrega entrega;
+
 }
