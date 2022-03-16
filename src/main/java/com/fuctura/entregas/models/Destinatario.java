@@ -14,7 +14,7 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-@Embeddable
+@Embeddable //Leva esses atributos a classe Entrega
 public class Destinatario {
 	
 	
