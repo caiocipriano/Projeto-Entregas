@@ -21,12 +21,7 @@ public class EntregaController  {
 	@Autowired
 	private EntregasService service;
 	
-	//@PostMapping("/post")
-	//public Cliente postCliente(@RequestBody Cliente cliente) {
-	//	return repository.save(cliente);
-//	}
-	
-	//Chamando função do Service
+
 	@PostMapping("/post")
 	public Entrega postEntrega(@RequestBody Entrega entrega) {
 		return service.postEntrega(entrega);
