@@ -23,5 +23,9 @@ public class EntregasService {
 		return repository.save(entrega);
 	}
 	
+	public Entrega putEntrega(@RequestBody Entrega entrega) {
+		return repository.save(entrega);
+	}
+	
 	
 }
