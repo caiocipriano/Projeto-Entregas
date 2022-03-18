@@ -2,6 +2,7 @@ package com.fuctura.entregas.service;
 
 import java.util.List;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +18,9 @@ public class ClienteService {
 	@Autowired
 	ClienteRepository clienteRepository; 
 	
+	//@Autowired
+	//ModelMapper modelMapper;
+	
 	   //Cliente HTTP methods
 	
 		public List<Cliente> listClients(){
@@ -26,8 +30,9 @@ public class ClienteService {
 		public Cliente findClient(@PathVariable Long id){
 			return this.clienteRepository.findById(id).get();
 		}
-		
+		//
 		public Cliente postCliente(@RequestBody Cliente cliente) {
+			//Cliente cli = modelMapper.map(cliente, Cliente.class);
 			return clienteRepository.save(cliente);
 		}
 		

@@ -26,31 +26,31 @@ public class ClienteController {
 	@Autowired
 	ClienteService service;
 	
-	@GetMapping("/findAll")
+	@GetMapping("/findAllClients")
 	@Operation(summary="List all clientes")
 	public List<Cliente> findAll(){
 		return service.listClients();
 	}
 	
-	@GetMapping(value ="/{id}")
+	@GetMapping(value ="/findCliente/{id}")
 	@Operation(summary="Find by ID")
 	public Cliente findId(@PathVariable Long id) {
 		return service.findClient(id);
 	}
 	
-	@PostMapping("/post")
+	@PostMapping("/postCliente")
 	@Operation(summary="Insert Cliente informations")
 	public Cliente post(@Valid @RequestBody Cliente cliente) {
 		return service.postCliente(cliente);
 	}
 	
-	@PutMapping("/put")
+	@PutMapping("/putCliente")
 	@Operation(summary="Update Cliente informations")
 	public void put(@RequestBody Cliente cliente) {
 		service.putCliente(cliente);
 	}
 	
-	@DeleteMapping("/delete")
+	@DeleteMapping("/deleteCliente")
 	@Operation(summary="Delete Cliente By Id")
 	public void delete(@PathVariable Long id) {
 		service.deleteCliente(id);

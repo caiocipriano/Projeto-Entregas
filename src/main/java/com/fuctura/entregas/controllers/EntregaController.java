@@ -26,31 +26,31 @@ public class EntregaController  {
 	@Autowired
 	private EntregasService service;
 	
-	@GetMapping("/findAll")
+	@GetMapping("/findAllEntrega")
 	@Operation(summary="List all Entregas")
 	public List<Entrega>findAll(){
 		return service.listEntregas();
 	}
 	
-	@GetMapping(value ="/{id}")
+	@GetMapping(value ="/Entrega/{id}")
 	@Operation(summary="Find by ID")
 	public Entrega findById(@PathVariable Long id) {
 		return service.findEntrega(id);
 	}
 	
-	@PostMapping("/post")
+	@PostMapping("/postEntrega")
 	@Operation(summary="Insert Entrega informations")
 	public Entrega post(@Valid @RequestBody Entrega entrega) {
 		return service.postEntrega(entrega);
 	}
 	
-	@PutMapping("/put")
+	@PutMapping("/putEntrega")
 	@Operation(summary="Update Entrega information like Status and dataFinalizacao")
 	public void put(@RequestBody Entrega entrega) {
 		service.putEntrega(entrega);
 	}
 	
-	@DeleteMapping("/delete")
+	@DeleteMapping("/deleteEntrega")
 	@Operation(summary="Delete Entrega By Id")
 	public void delete(@PathVariable Long id) {
 		service.deleteEntrega(id);

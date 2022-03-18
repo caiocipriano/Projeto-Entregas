@@ -3,12 +3,16 @@ package com.fuctura.entregas.service;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import javax.persistence.CascadeType;
+
+import org.hibernate.annotations.Cascade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import com.fuctura.entregas.models.Cliente;
+import com.fuctura.entregas.models.Destinatario;
 import com.fuctura.entregas.models.Entrega;
 import com.fuctura.entregas.repository.ClienteRepository;
 import com.fuctura.entregas.repository.EntregasRepository;
