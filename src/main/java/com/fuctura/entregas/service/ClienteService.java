@@ -30,6 +30,11 @@ public class ClienteService {
 		public Cliente findClient(@PathVariable Long id){
 			return this.clienteRepository.findById(id).get();
 		}
+		
+		public List<Cliente> findClientByName(String nome){
+			List<Cliente>clientes=this.clienteRepository.findClientByName(nome);
+			return clientes;
+		}
 		//
 		public Cliente postCliente(@RequestBody Cliente cliente) {
 			//Cliente cli = modelMapper.map(cliente, Cliente.class);

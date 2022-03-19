@@ -37,6 +37,11 @@ public class ClienteController {
 	public Cliente findId(@PathVariable Long id) {
 		return service.findClient(id);
 	}
+	@GetMapping(value ="/findClienteByName/{nome}")
+	@Operation(summary="Find by Name")
+	public List<Cliente> findByName(@PathVariable String nome) {
+		return service.findClientByName(nome);
+	}
 	
 	@PostMapping("/postCliente")
 	@Operation(summary="Insert Cliente informations")
