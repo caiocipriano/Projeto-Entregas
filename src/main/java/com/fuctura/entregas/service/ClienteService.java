@@ -32,7 +32,7 @@ public class ClienteService {
 		}
 		
 		public List<Cliente> findClientByName(String nome){
-			List<Cliente>clientes=this.clienteRepository.findClientByName(nome);
+			List<Cliente>clientes=this.clienteRepository.findByNomeContaining(nome);
 			return clientes;
 		}
 		//

@@ -11,7 +11,9 @@ import com.fuctura.entregas.models.Cliente;
 @Repository
 public interface ClienteRepository extends JpaRepository<Cliente,Long>{
 
-	@Query(value="SELECT * FROM cliente WHERE nome LIKE %?1%", nativeQuery=true)
-	List<Cliente> findClientByName(String nome);
+	//@Query(value="SELECT * FROM cliente WHERE nome LIKE %?1%", nativeQuery=true)
+	//List<Cliente> findClientByName(String nome);
 	
+	
+	List<Cliente> findByNomeContaining(String nome);
 }
