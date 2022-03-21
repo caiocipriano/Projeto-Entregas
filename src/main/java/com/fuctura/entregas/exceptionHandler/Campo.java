@@ -1,4 +1,4 @@
-package com.fuctura.cliente.exceptionHandler;
+package com.fuctura.entregas.exceptionHandler;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,4 +1,4 @@
-package com.fuctura.cliente.models.dto;
+package com.fuctura.entregas.models.dto;
 
 import lombok.Data;
 
